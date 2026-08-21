@@ -11,6 +11,9 @@
   a.button { display: inline-block; background: #2E5C8A; color: #fff; padding: 10px 16px; border-radius: 4px; text-decoration: none; margin: 6px 6px 6px 0; }
   .tags span { background: #EAF1F8; color: #1F3864; padding: 4px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; }
   footer { margin-top: 40px; font-size: 13px; color: #888; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 14px; }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+th { background: #EAF1F8; color: #1F3864; }
 </style>
 </head>
 <body>
@@ -31,42 +34,52 @@ Meridian's product team needs to know whether falling engagement is a pricing pr
 <img src="Meridian-dashboard.png" alt="Meridian engagement dashboard">
 
 <h2>Key Findings</h2>
-<p>1. Engagement is declining steadily, month over month
-Month	Active Users	MAU Rate
-January	12,740	52.0%
-February	12,250	50.0%
-March	11,890	48.5%
-April	11,200	45.7%
-May	10,600	43.3%
-June	9,800	40.0%
+<p><strong>1. Engagement is declining steadily, month over month</strong></p>
+<table>
+<tr><th>Month</th><th>Active Users</th><th>MAU Rate</th></tr>
+<tr><td>January</td><td>12,740</td><td>52.0%</td></tr>
+<tr><td>February</td><td>12,250</td><td>50.0%</td></tr>
+<tr><td>March</td><td>11,890</td><td>48.5%</td></tr>
+<tr><td>April</td><td>11,200</td><td>45.7%</td></tr>
+<tr><td>May</td><td>10,600</td><td>43.3%</td></tr>
+<tr><td>June</td><td>9,800</td><td>40.0%</td></tr>
+</table>
+<p>Meridian lost 12 percentage points of MAU rate in six months, with no month showing recovery. At this rate, engagement would continue falling well below 40% within another two quarters if nothing changes.</p>
 
-Meridian lost 12 percentage points of MAU rate in six months, with no month showing recovery. At this rate, engagement would continue falling well below 40% within another two quarters if nothing changes.
-2. Plan type and country do not explain it
-If disengagement were a pricing problem, cheaper or more expensive plans would show different behavior. They don't:
-Plan	Users	June Active Rate	Avg. Active Months (of 6)
-Free	6,211	39.1%	2.74
-Starter	6,163	40.0%	2.78
-Professional	6,087	40.5%	2.83
-Enterprise	6,039	40.4%	2.82
+<p><strong>2. Plan type and country do not explain it</strong></p>
+<p>If disengagement were a pricing problem, cheaper or more expensive plans would show different behavior. They don't:</p>
+<table>
+<tr><th>Plan</th><th>Users</th><th>June Active Rate</th><th>Avg. Active Months (of 6)</th></tr>
+<tr><td>Free</td><td>6,211</td><td>39.1%</td><td>2.74</td></tr>
+<tr><td>Starter</td><td>6,163</td><td>40.0%</td><td>2.78</td></tr>
+<tr><td>Professional</td><td>6,087</td><td>40.5%</td><td>2.83</td></tr>
+<tr><td>Enterprise</td><td>6,039</td><td>40.4%</td><td>2.82</td></tr>
+</table>
+<p>Country tells the same story, every one of the six countries in the dataset (Netherlands, Germany, Ireland, United Kingdom, Spain, France) falls between 39.2% and 40.6% June active rate. A spread that tight, across every plan and every country, rules out plan and geography as the driver.</p>
 
-Country tells the same story, every one of the six countries in the dataset (Netherlands, Germany, Ireland, United Kingdom, Spain, France) falls between 39.2% and 40.6% June active rate. A spread that tight, across every plan and every country, rules out plan and geography as the driver.
-3. Tenure is the driver: engagement fades the longer someone has been a customer
-Grouping users by signup month tells a very different story than plan or country. Users who signed up in June 2023 were active only 0.08 of a possible 6 months by June 2024, essentially gone. Users who signed up in December 2023 or January 2024, who by June 2024 have also had a full 5-to-6-month window to be observed were active only 1.19 and 2.30 months respectively, still far below users who signed up more recently. This is not simply an artifact of newer users having had less time in the data window; even cohorts with a full observation window show progressively lower engagement the earlier they signed up. In practical terms: whatever hooks a new user into Meridian in month one wears off, and nothing is bringing users back after that.
-This reframes the problem from "who is Meridian losing" (a demographic question) to "when does Meridian lose them" (a lifecycle question) which points toward onboarding, habit formation, and re-engagement work rather than pricing or regional strategy.
-4. Support is failing broadly, not in one category
-Category	Tickets	% of All Tickets	Unresolved/Escalated Rate	Avg. Resolution (mins)
-Can't find what I need	838	29.9%	63.4%	90.1
-Feature not working as expected	580	20.7%	69.8%	92.0
-Billing query	558	19.9%	63.3%	78.6
-Integration issue	419	15.0%	67.5%	80.3
-General enquiry	204	7.3%	72.1%	60.5
-Feature request	201	7.2%	65.2%	64.5
+<p><strong>3. Tenure is the driver: engagement fades the longer someone has been a customer</strong></p>
+<p>Grouping users by signup month tells a very different story than plan or country. Users who signed up in June 2023 were active only 0.08 of a possible 6 months by June 2024, essentially gone. Users who signed up in December 2023 or January 2024, who by June 2024 have also had a full 5-to-6-month window to be observed were active only 1.19 and 2.30 months respectively, still far below users who signed up more recently. This is not simply an artifact of newer users having had less time in the data window; even cohorts with a full observation window show progressively lower engagement the earlier they signed up. In practical terms: whatever hooks a new user into Meridian in month one wears off, and nothing is bringing users back after that.</p>
+<p>This reframes the problem from "who is Meridian losing" (a demographic question) to "when does Meridian lose them" (a lifecycle question) which points toward onboarding, habit formation, and re-engagement work rather than pricing or regional strategy.</p>
 
-Across all 2,800 tickets, 66.1% end in escalation or non-resolution, and that rate barely moves between categories (63%–72%). Resolution time doesn't explain it either, tickets that get resolved take about the same time (81.5 minutes) as ones that don't (83.7 minutes). This pattern looks like a support process or capacity issue affecting every ticket type equally, rather than a handful of hard problems dragging the average down.
-The largest single category, "Can't find what I need," is a navigation/UX complaint, not a bug report, and it's the single biggest reason customers contact support at all.
-5. The most severely disengaged group is large and worth re-verifying
-7,350 users (30.0% of the entire 24,500-user base) signed up on or before January 31, 2024, and have not logged in since April 1, 2024, a 90-day-plus silence. Notably, this figure equals 100% of everyone who signed up in that window; every established user in the dataset falls into the quiet group. A spread that perfectly uniform is unusual for real customer behavior and should be re-verified against Meridian's production login data before being used in a business decision, it may be an artifact of how this sample dataset was generated rather than a literal real-world rate. Even so, the underlying magnitude (roughly 3 in 10 customers going dark) is consistent with the broader MAU decline and is unlikely to be entirely a data artifact.
-"Note: no session data was logged for April and May 2024, so trends for those months should be read with caution."</p>
+<p><strong>4. Support is failing broadly, not in one category</strong></p>
+<table>
+<tr><th>Category</th><th>Tickets</th><th>% of All Tickets</th><th>Unresolved/Escalated Rate</th><th>Avg. Resolution (mins)</th></tr>
+<tr><td>Can't find what I need</td><td>838</td><td>29.9%</td><td>63.4%</td><td>90.1</td></tr>
+<tr><td>Feature not working as expected</td><td>580</td><td>20.7%</td><td>69.8%</td><td>92.0</td></tr>
+<tr><td>Billing query</td><td>558</td><td>19.9%</td><td>63.3%</td><td>78.6</td></tr>
+<tr><td>Integration issue</td><td>419</td><td>15.0%</td><td>67.5%</td><td>80.3</td></tr>
+<tr><td>General enquiry</td><td>204</td><td>7.3%</td><td>72.1%</td><td>60.5</td></tr>
+<tr><td>Feature request</td><td>201</td><td>7.2%</td><td>65.2%</td><td>64.5</td></tr>
+</table>
+<p>Across all 2,800 tickets, 66.1% end in escalation or non-resolution, and that rate barely moves between categories (63%–72%). Resolution time doesn't explain it either, tickets that get resolved take about the same time (81.5 minutes) as ones that don't (83.7 minutes). This pattern looks like a support process or capacity issue affecting every ticket type equally, rather than a handful of hard problems dragging the average down.</p>
+<p>The largest single category, "Can't find what I need," is a navigation/UX complaint, not a bug report, and it's the single biggest reason customers contact support at all.</p>
+
+<p><strong>5. The most severely disengaged group is large and worth re-verifying</strong></p>
+<p>7,350 users (30.0% of the entire 24,500-user base) signed up on or before January 31, 2024, and have not logged in since April 1, 2024, a 90-day-plus silence. Notably, this figure equals 100% of everyone who signed up in that window; every established user in the dataset falls into the quiet group. A spread that perfectly uniform is unusual for real customer behavior and should be re-verified against Meridian's production login data before being used in a business decision, it may be an artifact of how this sample dataset was generated rather than a literal real-world rate. Even so, the underlying magnitude (roughly 3 in 10 customers going dark) is consistent with the broader MAU decline and is unlikely to be entirely a data artifact.</p>
+<p><em>Note: no session data was logged for April and May 2024, so trends for those months should be read with caution.</em></p>
+
+
+
 
 <h2>Recommendations</h2>
 <p>
